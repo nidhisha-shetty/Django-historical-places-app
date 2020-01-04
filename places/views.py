@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Places
 
 		#Create your views here.
 
@@ -9,9 +10,9 @@ from django.http import HttpResponse
 
 
 def home_view(request):
+	o=Places.objects.get(id=5)
 	context={
-		'text': "testing context",
-		'number': "testing context"
+		'obj':o.place_image
 	}
 	return render(request, "home.html", context)
 
