@@ -9,5 +9,9 @@ from django.http import HttpResponse
 
 
 def home_view(request):
-	return render(request, "home.html", {})
+	context={
+		'text': "testing context",
+		'number': "testing context"
+	}
+	return render(request, "home.html", context)
 
