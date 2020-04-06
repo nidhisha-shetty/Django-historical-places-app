@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Places
+from .forms import Form
 
 		#Create your views here.
 
@@ -15,4 +16,14 @@ def home_view(request):
 		'obj':o.place_image
 	}
 	return render(request, "home.html", context)
+
+def create_view(request):
+	form = Form(request.POST or None)
+	if form.is_valid():
+		form.save()
+		form=Form()
+	context = {
+		'form': form
+	}
+	return render(request, "create.html", context)
 
