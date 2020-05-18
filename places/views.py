@@ -27,3 +27,12 @@ def create_view(request):
 	}
 	return render(request, "create.html", context)
 
+def edit_view(request):
+	o=Places.objects.get(id=10)
+	form=Form(request.POST or None, request.FILES or None, instance=o)
+	if form.is_valid():
+		form.save()
+	context={
+	'form': form
+	}
+	return render(request, "edit.html", context)
