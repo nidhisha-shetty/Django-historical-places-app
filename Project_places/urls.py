@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from places.views import home_view, create_view, edit_view, delete_view, list_view
+from django.conf import settings
+from django.conf.urls.static import static
+from places.views import home_view, create_view, edit_view, delete_view, list_view, read_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,6 +26,7 @@ urlpatterns = [
    # path('edit', edit_view),
     path('edit/<int:my_id>/', edit_view),
     path('delete/<int:my_id>/', delete_view),
+    path('read/<int:my_id>/', read_view),
     path('list', list_view)
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

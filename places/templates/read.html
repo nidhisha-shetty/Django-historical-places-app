@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+Place name: {{ obj.place_name }} <br/>
+Place ratings: {{ obj.place_ratings }} <br/>
+Place image: <img src="{{ obj.place_image.url }}"  height="200" width="200" /> <br/>
+Place description: {{ obj.place_description }}
+
+{% endblock %}

@@ -11,9 +11,9 @@ from .forms import Form
 
 
 def home_view(request):
-	o=Places.objects.get(id=5)
+	o=Places.objects.get(id=10)
 	context={
-		'obj':o.place_image
+		'obj':o
 	}
 	return render(request, "home.html", context)
 
@@ -54,3 +54,10 @@ def list_view(request):
 	'obj': o
 	}
 	return render(request, "list.html", context)
+
+def read_view(request, my_id):
+	o=Places.objects.get(id=my_id)
+	context = {
+	'obj': o
+	}
+	return render(request, "read.html", context)
