@@ -1,0 +1,1 @@
+Image upload guide: https://simpleisbetterthancomplex.com/tutorial/2016/08/01/how-to-upload-files-with-django.html

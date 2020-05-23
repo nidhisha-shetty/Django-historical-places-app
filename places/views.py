@@ -18,7 +18,7 @@ def home_view(request):
 	return render(request, "home.html", context)
 
 def create_view(request):
-	form = Form(request.POST or None)
+	form = Form(request.POST or None, request.FILES or None)
 	if form.is_valid():
 		form.save()
 		form=Form()
@@ -27,11 +27,13 @@ def create_view(request):
 	}
 	return render(request, "create.html", context)
 
+
 def edit_view(request, my_id):
 	o=Places.objects.get(id=my_id)
 	form=Form(request.POST or None, request.FILES or None, instance=o)
 	if form.is_valid():
 		form.save()
+		form=Form()
 	context={
 	'form': form
 	}
