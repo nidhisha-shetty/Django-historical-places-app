@@ -8,13 +8,16 @@
 	<title>Add place details</title>
 </head>
 <body>
+
 	<style>
+	
 		p {
 			color: black;
 			font-family: georgia, sans-serif;
 			font-style: italic;
 			font-size: 20px;
 		}
+	
 		.button {
 			border: none;
 			font-family: "georgia",sans-serif;
@@ -31,28 +34,27 @@
 			transition: 0.1s;
 			overflow: hidden;
 		}
+	
 		.button:hover{
 			color: #BDC581
 			background: #BDC581;
 			box-shadow: 0 0 10px #e17055, 0 0 40px #e17055, 0 0 80px #e17055;
 			transition-delay: 0.2s;
 		}
+	
 	</style>
 
 <marquee behavior="scroll" direction="right">
 <p> Welcome, {{ request.user }} </p>
 </marquee>
+
 <p align="center">
 <a href="http://127.0.0.1:8000/create" button class="button">Add place details</a> 
 <a href="http://127.0.0.1:8000/list_edit" button class="button">Edit place details</a>
 <a href="http://127.0.0.1:8000/list_read" button class="button">View place details</a>
 <a href="http://127.0.0.1:8000/list_delete" button class="button">Remove place details</a></button></p><br />
-	<img src="/Project_places/images/places-1.jpg" height="300" width="400"/><img src="/Project_places/images/places-4.jpg" height="300" width="500"/><img src="/Project_places/images/places-3.jpg" height="300" width="430"/>
 
-
-
-
-
+<img src="/Project_places/images/places-1.jpg" height="300" width="400"/><img src="/Project_places/images/places-4.jpg" height="300" width="500"/><img src="/Project_places/images/places-3.jpg" height="300" width="430"/>
 
 </body>
 </html>

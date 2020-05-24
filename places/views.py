@@ -11,11 +11,8 @@ from .forms import Form
 
 
 def home_view(request):
-	o=Places.objects.get(id=10)
-	context={
-		'obj':o
-	}
-	return render(request, "home.html", context)
+	
+	return render(request, "home.html")
 
 def create_view(request):
 	form = Form(request.POST or None, request.FILES or None)

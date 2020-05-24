@@ -8,6 +8,7 @@
 	<title>Add place details</title>
 </head>
 <body>
+	<h3>Select a place to delete</h3>
 
 	<style>
 		
@@ -22,6 +23,27 @@
 			color: black
 			
 		}
+		.back-button {
+			border: none;
+			font-family: georgia, sans-serif;
+			font-style: italic;
+			font-size: 15px;
+			border-radius: 6px;
+			cursor: pointer;
+			margin: 10px;
+			padding: 10px;
+			width: 60px;
+			border-radius: 6px;
+			color: Black;
+			background-size: 200%;
+			background-image: linear-gradient(to left, #ffeaa7, #e17055, #ffeaa7);
+			transition: 0.1s;
+			overflow: hidden;
+		}
+		h3{
+			font-family: georgia, sans-serif;
+			font-style: italic;
+		}
 	
 	</style>
 
@@ -33,5 +55,7 @@
 * <a href="{{ x.get_absolute_url_delete }}" class="button">{{ x.place_name }}</a> <br /><br>
 
 {% endfor %}
+
+<p align="center" ><a href="/" class="back-button">Back</a></p>
 
 {% endblock %}
