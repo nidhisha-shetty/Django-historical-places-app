@@ -1,10 +1,52 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
-Place name: {{ obj.place_name }} <br/>
-Place ratings: {{ obj.place_ratings }} <br/>
-Place image: <img src="{{ obj.place_image.url }}"  height="200" width="200" /> <br/>
-Place description: {{ obj.place_description }}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add place details</title>
+</head>
+<body>
+
+	<style>
+		input{
+			text-decoration:underline;
+
+		}
+		p{
+			font-family: georgia, sans-serif;
+			font-style: italic;
+		}
+		.button {
+			border: none;
+			font-family: georgia, sans-serif;
+			font-style: italic;
+			font-size: 15px;
+			border-radius: 6px;
+			cursor: pointer;
+			margin: 10px;
+			padding: 10px;
+			width: 60px;
+			border-radius: 6px;
+			color: Black;
+			background-size: 200%;
+			background-image: linear-gradient(to left, #ffeaa7, #e17055, #ffeaa7);
+			transition: 0.1s;
+			overflow: hidden;
+		}
+		.button:hover{
+			color: #BDC581
+			background: #BDC581;
+			box-shadow: 0 0 10px #e17055, 0 0 40px #e17055, 0 0 80px #e17055;
+			transition-delay: 0.2s;
+		}
+	</style>
+
+<p>Place name: <u>{{ obj.place_name }}</u> <br/><br />
+Place ratings: <u></ul>{{ obj.place_ratings }}</u> <br/><br />
+Place image: <img src="{{ obj.place_image.url }}"  height="200" width="200" /> <br/><br />
+Place description: <u>{{ obj.place_description }}</u></p><br><br>
+
+<a href="/" class="button">Back</a>
 
 {% endblock %}

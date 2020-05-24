@@ -50,12 +50,12 @@ def delete_view(request, my_id):
 	}
 	return render(request, "delete.html", context)
 
-def list_view(request):
+def list_read_view(request):
 	o=Places.objects.all()
 	context = {
 	'obj': o
 	}
-	return render(request, "list.html", context)
+	return render(request, "list_read.html", context)
 
 def read_view(request, my_id):
 	o=Places.objects.get(id=my_id)
@@ -63,3 +63,17 @@ def read_view(request, my_id):
 	'obj': o
 	}
 	return render(request, "read.html", context)
+
+def list_edit_view(request):
+	o=Places.objects.all()
+	context = {
+	'obj': o
+	}
+	return render(request, "list_edit.html", context)
+
+def list_delete_view(request):
+	o=Places.objects.all()
+	context = {
+	'obj': o
+	}
+	return render(request, "list_delete.html", context)

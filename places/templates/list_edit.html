@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add place details</title>
+</head>
+<body>
+
+	<style>
+		
+		p{
+			font-family: georgia, sans-serif;
+			font-style: italic;
+		}
+		.button {
+			font-family: georgia, sans-serif;
+			font-style: italic;
+			font-size: 15px;
+			color: black
+			
+		}
+	
+	</style>
+
+{% for x in obj %}
+	
+<!-- <a href="http://127.0.0.1:8000/edit/{{ x.id }}/">{{ x.place_name }}</a>test <br />  -->
+<!-- There is no need to hardcode the url, also once we host the app online using heroku or pythonanywhere these links won't work, hence we use get_absolute_url -->
+
+
+* <a href="{{ x.get_absolute_url_edit }}" class="button">{{ x.place_name }}</a> <br /><br>
+
+{% endfor %}
+
+{% endblock %}

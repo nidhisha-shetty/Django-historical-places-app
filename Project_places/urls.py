@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from places.views import home_view, create_view, edit_view, delete_view, list_view, read_view
+from places.views import home_view, create_view, edit_view, delete_view, list_read_view, read_view, list_edit_view, list_delete_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +27,7 @@ urlpatterns = [
     path('edit/<int:my_id>/', edit_view),
     path('delete/<int:my_id>/', delete_view),
     path('read/<int:my_id>/', read_view),
-    path('list', list_view)
-
+    path('list_read', list_read_view),
+    path('list_edit', list_edit_view),
+    path('list_delete', list_delete_view)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
